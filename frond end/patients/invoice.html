@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LAS | Patients</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="../plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="../plugins/toastr/toastr.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="../plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="../plugins/daterangepicker/daterangepicker.css">
+   <!-- Tempusdominus Bootstrap 4 -->
+   <link rel="stylesheet" href="../plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
+ 
+</head>
+<body class="sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed accent-teal text-sm">
+<div class="wrapper">
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="../dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
+  </div>
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark bg-teal">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+      </li>
+    </ul>
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      
+      <li class="nav-item">
+        <a class="nav-link btnLogout" href="javascript:void(0)" role="button" title="Logout">
+          <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar elevation-4 sidebar-light-teal">
+    <!-- Brand Logo -->
+    <a href="index.html" class="brand-link bg-teal">
+      <img src="../dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light">LAS</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">Alexander Pierce</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column text-sm" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->          
+          <!-- <li class="nav-header">EXAMPLES</li> -->
+          <li class="nav-item">
+            <a href="/LAS/index.html" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Dashboard
+              </p>
+            </a>
+          </li>
+          <li class="nav-item" id="liinvoice" >
+            <a href="/LAS/invoices/invoice.html" class="nav-link active">
+                <i class="nav-icon fas fa-user-plus text-blue"></i>
+                <p>Patient Registration</p>               
+            </a>
+          </li>
+          <li class="nav-item" id="liresultsAdd" >
+            <a href="/LAS/invoices/labqueue.html" class="nav-link">
+              <i class="fas fa-tasks nav-icon text-green"></i>
+              <p>Lab Queue</p>               
+            </a>
+          </li>
+          <li class="nav-item" id="liresults">
+            <a href="/LAS/invoices/results.html" class="nav-link">
+                <i class="fas fa-file-alt nav-icon text-green"></i>
+                <p>Results</p>               
+            </a>
+          </li> 
+          <li class="nav-item" id="lipatients">
+            <a href="/LAS/patients/patients.html" class="nav-link ">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Patients
+              </p>
+            </a>
+          </li>
+          <li class="nav-item" id="litestcategories">
+            <a href="/LAS/tests/testCategories.html" class="nav-link">
+              <i class="fas fa-vials nav-icon text-maroon"></i>
+              <p>
+                Tests Categories
+              </p>
+            </a>
+          </li>
+          <li class="nav-item" id="lidoctors">
+            <a href="/LAS/doctors/doctors.html" class="nav-link ">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Doctors
+              </p>
+            </a>
+          </li>
+          <li class="nav-item" id="licenters">
+            <a href="/LAS/centers/centers.html" class="nav-link">
+              <i class="fas fa-landmark nav-icon text-maroon"></i>
+              <p>
+                Centers
+              </p>
+            </a>
+          </li>
+          <li class="nav-item" id="liusers">
+            <a href="/LAS/users/users.html" class="nav-link ">
+              <i class="nav-icon fas fa-users"></i>
+              <p>
+                Users
+              </p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1 class="m-0">Patient Registration</h1>
+          </div><!-- /.col -->
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item"><a href="#">Patients</a></li>
+              <li class="breadcrumb-item active">Patient Registration</li>
+            </ol>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-outline card-success">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-3">
+                    <h6>Invoice #<span id="invoice">2024314-1-1</span></h6>
+                  </div>
+                  <div class="col-3">
+                    <label class="text-muted">Date: <span id="invDate">2024-3-14 14:7</span>
+                      <a href="javascript:void(0)" class="btnChangeDate"><i class="fas fa-edit"></i></a>
+                    </label>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-group">
+                      <div class="icheck-primary d-inline">
+                          <input type="checkbox" id="chkPrintBill" checked="">
+                          <label for="chkPrintBill" class="text-muted"> Print bill/Not
+                          </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <h6>Billed by: <span id="user">Admin</span></h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-3">
+                    <div class="form-group">
+                      <label for="exampleInputText" style="width: 100%;">Patient <a href="javascript:void(0)" class="float-right">New</a></label>
+                      <select class="form-control select2bs4" id="patient" name="patient"></select>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-group">
+                      <label for="exampleInputText" style="width: 100%;">Doctor <a href="javascript:void(0)" class="float-right">New</a></label>
+                      <select class="form-control select2bs4" id="doctor" name="doctor"></select>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-group">
+                      <label for="exampleInputText" style="width: 100%;">Center <a href="javascript:void(0)" class="float-right">New</a></label>
+                      <select class="form-control select2bs4" id="center" name="center"></select>
+                    </div>
+                  </div>
+                  <div class="col-3">
+                    <div class="form-group">
+                      <label for="exampleInputText">Specimen</label>
+                      <select class="form-control custom-select" id="sltSpecimen" data-placeholder="Select Specimen" style="width: 100%;">
+                        <option value="1">BLOOD</option>
+                        <option value="2">URINE</option>
+                        <option value="3">FAECES</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-12 col-md-12" data-select2-id="15">
+                      <div class="direct-chat-messages" style="height: 300px" data-select2-id="14">
+                      <table class="table table-bordered table-sm" data-select2-id="13">
+                       <thead class="table-secondary">
+                       <tr>
+                          <th style="width: 5%; text-align: center;"><i class="fas fa-times"></i></th>
+                         <th>Tests</th>
+                         <th style="width: 12%; text-align: right;">Price</th>
+                         <th style="width: 15%; text-align: right;">Total</th>
+                       </tr>
+                       </thead>
+                       <tbody class="" id="tableContent"></tbody>
+                       <tfoot>
+                          <tr >
+                             <td colspan="4" ><select class="form-control select2bs4" id="sltTests" ></select></td>
+                          </tr>
+                       </tfoot>
+                     </table>
+                      <table class="table table-sm">
+                        <tbody><tr>
+                          <th style="width:50%">Subtotal:</th>
+                          <td style="text-align: right;" id="supTotal">0.00</td>
+                        </tr>
+                        <tr>
+                          <th>Discount <span id="thDis"></span></th>
+                          <td style="text-align: right;" id="discount">0.00</td>
+                        </tr>
+                        <tr>
+                          <th>Total:</th>
+                          <td style="text-align: right;" id="netTotal">0.00</td>
+                        </tr>
+                        <tr>
+                          <td style="text-align: right;" colspan="2">
+                            <button type="button" class="btn bg-gradient-info btnPrint btn-sm" title="Print"><i class="fas fa-print"></i> Print</button>
+                            <button type="button" class="btn bg-gradient-success btnCash btn-sm" title="Cash"><i class="fas fa-money-bill-wave"></i> Cash</button>
+                          </td>
+                        </tr>
+                      </tbody></table>
+                    </div>
+                  </div>
+                  <!-- /.col -->
+              </div>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <!-- modal  -->
+  <div class="modal fade" id="modal-default">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content">
+        <div class="modal-header card-outline card-success">
+          <h4 class="modal-title">Create Patient</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          
+        </div>
+        <div class="modal-footer justify-content-between">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" id="btnModalSave">Save</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="../plugins/moment/moment.min.js"></script>
+<!-- SweetAlert2 -->
+<script src="../plugins/sweetalert2/sweetalert2.min.js"></script>
+<!-- Toastr -->
+<script src="../plugins/toastr/toastr.min.js"></script>
+<!-- Select2 -->
+<script src="../plugins/select2/js/select2.full.min.js"></script>
+<!-- date-range-picker -->
+<script src="../plugins/daterangepicker/daterangepicker.js"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../plugins/jszip/jszip.min.js"></script>
+<script src="../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../dist/js/adminlte.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../dist/js/config/config.js"></script>
+<script src="../dist/js/sys/newinvoice.js"></script>
+
+</body>
+</html>
